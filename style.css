@@ -1,0 +1,180 @@
+:root {
+  --bg: #ffffff;
+  --card: #ffffff;
+  --ink: #111111;
+  --muted: #5f5f5f;
+  --line: #dcdcdc;
+  --radius: 14px;
+  --serif: "Merriweather", Georgia, serif;
+  --sans: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.55;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1.25rem 2rem;
+}
+main { width: 100%; max-width: 440px; text-align: center; }
+
+.logo {
+  display: block;
+  width: 160px;
+  max-width: 45%;
+  height: auto;
+  margin: 0 auto 1.5rem;
+}
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.name {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.65rem;
+  line-height: 1.2;
+}
+.tagline {
+  color: var(--muted);
+  font-size: .9rem;
+  margin-top: .4rem;
+}
+
+.blurb {
+  margin: 1.75rem 0;
+  font-size: 1.02rem;
+  text-wrap: pretty;
+}
+.blurb strong { font-weight: 600; }
+
+.facts {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+  margin-bottom: 2rem;
+}
+.facts li {
+  font-size: .82rem;
+  color: var(--muted);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .3rem .8rem;
+}
+
+h2 {
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: .85rem;
+}
+
+.links { display: grid; gap: .75rem; }
+.btn {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  text-align: left;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--card);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  padding: .95rem 1.1rem;
+  transition: background .15s ease, color .15s ease;
+}
+.btn:hover, .btn:focus-visible {
+  background: var(--ink);
+  color: #fff;
+  outline: none;
+}
+.btn:focus-visible { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--ink); }
+.btn .icon { font-size: 1.4rem; line-height: 1; flex: none; }
+.btn .label { font-weight: 600; font-size: 1.05rem; display: block; }
+.btn .sub { color: var(--muted); font-size: .82rem; display: block; }
+.btn:hover .sub, .btn:focus-visible .sub, .btn:hover .arrow, .btn:focus-visible .arrow { color: #ccc; }
+.btn .arrow { margin-left: auto; color: var(--muted); font-size: 1.3rem; }
+
+.quote {
+  margin: 2.25rem 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--muted);
+  font-size: .98rem;
+}
+.quote cite { display: block; font-style: normal; font-family: inherit; font-size: .8rem; margin-top: .3rem; }
+
+footer {
+  margin-top: 2.5rem;
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+
+/* ---- Card welcome page (/hi/) ---- */
+.welcome .logo { width: 104px; margin-bottom: 1rem; }
+.hello {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+.lede { margin: .6rem 0 1.75rem; font-size: 1.02rem; color: var(--muted); text-wrap: pretty; }
+.lede strong { color: var(--ink); font-weight: 600; }
+
+.next { margin-top: 2.25rem; text-align: left; }
+.steps { list-style: none; counter-reset: step; display: grid; gap: .9rem; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 2rem 1fr; gap: .75rem; align-items: start; font-size: .95rem; }
+.steps li::before {
+  content: counter(step);
+  width: 2rem; height: 2rem; border-radius: 50%;
+  border: 2px solid var(--ink);
+  display: grid; place-items: center;
+  font-weight: 600; font-size: .9rem;
+}
+.steps strong { display: block; font-weight: 600; }
+.steps span { color: var(--muted); }
+
+.extras { margin-top: 2.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+.chip {
+  display: flex; align-items: center; justify-content: center; gap: .45rem;
+  font: inherit; font-size: .88rem; font-weight: 500;
+  color: var(--ink); background: #f3f3f3;
+  border: 0; border-radius: 999px;
+  padding: .7rem .9rem; text-decoration: none; cursor: pointer;
+}
+.chip:hover, .chip:focus-visible { background: #e6e6e6; outline: none; }
+.chip:focus-visible { box-shadow: 0 0 0 2px var(--ink); }
+.more { display: inline-block; margin-top: 1.75rem; color: var(--ink); font-size: .9rem; }
+
+/* ---- Meet & greet call to action ---- */
+.cta { margin: 0 0 2rem; }
+.cta-note { font-size: .95rem; color: var(--muted); margin: 0 0 1rem; text-wrap: pretty; }
+.cta-buttons { display: grid; gap: .6rem; }
+.cta-btn {
+  display: block;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.08rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  transition: background .15s ease, color .15s ease;
+}
+.cta-btn small { display: block; font-weight: 400; font-size: .8rem; margin-top: .15rem; opacity: .8; }
+.cta-btn.primary { background: var(--ink); color: #fff; }
+.cta-btn.primary:hover, .cta-btn.primary:focus-visible { background: #333; outline: none; }
+.cta-btn.secondary { background: #fff; color: var(--ink); }
+.cta-btn.secondary:hover, .cta-btn.secondary:focus-visible { background: #f3f3f3; outline: none; }
+.cta-btn:focus-visible { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--ink); }
+.or { font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin: 0 0 .85rem; }

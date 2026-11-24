@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lovely to meet you · Pawpins Pet Care</title>
+  <!-- Landing page for the QR code on Louise's business card. Kept out of search results. -->
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://www.pawpinspetcare.com/">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="welcome">
+  <main>
+    <header>
+      <img class="logo" src="../logo.png" width="881" height="1422"
+           alt="Pawpins Pet Care logo: a cat holding an umbrella, with a kitten">
+      <h1 class="hello">Lovely to meet you!</h1>
+      <p class="lede">
+        Thanks for chatting with me. I'm <strong>Louise</strong>, and I'd love
+        to look after your fur baby.
+      </p>
+    </header>
+
+    <section class="cta" aria-labelledby="start">
+      <h2 id="start">First step: a meet &amp; greet</h2>
+      <p class="cta-note">
+        I like to meet before taking on any job, so your pets can get
+        comfortable with me and I can make sure I'm the right fit for your
+        sitting or boarding needs.
+      </p>
+      <div class="cta-buttons">
+        <a class="cta-btn primary" data-mail="meet" data-intro="We met recently and I picked up your card!"
+           href="mailto:louise@vangeffen.org?subject=Meet%20%26%20greet%20request">
+          Book your meet &amp; greet now
+          <small>Opens an email to me, ready to fill in</small>
+        </a>
+        <a class="cta-btn secondary" data-mail="availability" data-intro="We met recently and I picked up your card!"
+           href="mailto:louise@vangeffen.org?subject=Checking%20your%20availability">
+          Check my availability
+          <small>Send your dates and the type of care you need</small>
+        </a>
+      </div>
+    </section>
+
+    <section aria-labelledby="book">
+      <p class="or" id="book">Or book through</p>
+      <div class="links">
+        <a class="btn" href="https://www.rover.com/members/louise-v-let-me-take-care-of-your-fur-baby/" rel="noopener">
+          <span class="icon" aria-hidden="true">🐾</span>
+          <span><span class="label">Rover</span><span class="sub">Dogs or cats · book, message &amp; pay in the app</span></span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+        <a class="btn" href="https://meowtel.com/cat-sitters/WA/kenmore/gentle-loving-and-reliable-cat-care" rel="noopener">
+          <span class="icon" aria-hidden="true">🐈</span>
+          <span><span class="label">Meowtel</span><span class="sub">Cats · the cat-sitting specialist app</span></span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="next" aria-labelledby="next">
+      <h2 id="next">What happens next</h2>
+      <ol class="steps">
+        <li><div><strong>Meet &amp; greet</strong><span>I'll meet your pet, learn their routine and quirks, and we'll make sure it's a good fit all round.</span></div></li>
+        <li><div><strong>Book your dates</strong><span>Drop-ins, overnights, and medications, including injections and sub-Q fluids.</span></div></li>
+        <li><div><strong>Relax while you're away</strong><span>You'll get a photo update every visit.</span></div></li>
+      </ol>
+    </section>
+
+    <div class="extras">
+      <a class="chip" href="../louise-van-geffen.vcf" download>📇 Save my contact</a>
+      <button class="chip" type="button" id="share">💌 Share with a friend</button>
+    </div>
+
+    <a class="more" href="../">More about Louise &amp; Pawpins →</a>
+
+    <footer>© <span id="y">2026</span> Pawpins Pet Care</footer>
+  </main>
+
+  <script src="../mail.js"></script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Share the public home page (not this card page) with a friend.
+    const shareBtn = document.getElementById('share');
+    const shareData = {
+      title: 'Pawpins Pet Care',
+      text: 'Louise from Pawpins Pet Care is a wonderful pet sitter in Kenmore, WA.',
+      url: 'https://www.pawpinspetcare.com/'
+    };
+    shareBtn.addEventListener('click', async () => {
+      if (navigator.share) {
+        try { await navigator.share(shareData); } catch (e) { /* user cancelled */ }
+      } else {
+        try {
+          await navigator.clipboard.writeText(shareData.url);
+          shareBtn.textContent = '✓ Link copied';
+        } catch (e) {
+          window.location.href = 'mailto:?subject=' + encodeURIComponent(shareData.title) +
+            '&body=' + encodeURIComponent(shareData.text + '\n' + shareData.url);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
