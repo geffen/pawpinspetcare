@@ -4,6 +4,10 @@
   --ink: #111111;
   --muted: #5f5f5f;
   --line: #dcdcdc;
+  --stroke: #dde1e6;          /* soft border for buttons and step circles */
+  --accent: #0077d1;          /* Pawpins blue (from #0084e4, darkened a touch so white text passes contrast) */
+  --accent-hover: #0066b4;
+  --accent-soft: #f2f8fd;     /* light blue hover tint */
   --radius: 14px;
   --serif: "Merriweather", Georgia, serif;
   --sans: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -87,21 +91,20 @@ h2 {
   text-decoration: none;
   color: var(--ink);
   background: var(--card);
-  border: 2px solid var(--ink);
+  border: 1.5px solid var(--stroke);
   border-radius: var(--radius);
   padding: .95rem 1.1rem;
   transition: background .15s ease, color .15s ease;
 }
 .btn:hover, .btn:focus-visible {
-  background: var(--ink);
-  color: #fff;
+  border-color: var(--accent);
+  background: var(--accent-soft);
   outline: none;
 }
-.btn:focus-visible { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--ink); }
+.btn:focus-visible { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--accent); }
 .btn .icon { font-size: 1.4rem; line-height: 1; flex: none; }
 .btn .label { font-weight: 600; font-size: 1.05rem; display: block; }
 .btn .sub { color: var(--muted); font-size: .82rem; display: block; }
-.btn:hover .sub, .btn:focus-visible .sub, .btn:hover .arrow, .btn:focus-visible .arrow { color: #ccc; }
 .btn .arrow { margin-left: auto; color: var(--muted); font-size: 1.3rem; }
 
 .quote {
@@ -138,7 +141,7 @@ footer {
 .steps li::before {
   content: counter(step);
   width: 2rem; height: 2rem; border-radius: 50%;
-  border: 2px solid var(--ink);
+  border: 1.5px solid var(--stroke);
   display: grid; place-items: center;
   font-weight: 600; font-size: .9rem;
 }
@@ -166,17 +169,17 @@ footer {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.08rem;
-  border: 2px solid var(--ink);
+  border: 1.5px solid var(--stroke);
   border-radius: var(--radius);
   padding: 1rem 1.1rem;
   transition: background .15s ease, color .15s ease;
 }
 .cta-btn small { display: block; font-weight: 400; font-size: .8rem; margin-top: .15rem; opacity: .8; }
-.cta-btn.primary { background: var(--ink); color: #fff; }
-.cta-btn.primary:hover, .cta-btn.primary:focus-visible { background: #333; outline: none; }
+.cta-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.cta-btn.primary:hover, .cta-btn.primary:focus-visible { background: var(--accent-hover); border-color: var(--accent-hover); outline: none; }
 .cta-btn.secondary { background: #fff; color: var(--ink); }
-.cta-btn.secondary:hover, .cta-btn.secondary:focus-visible { background: #f3f3f3; outline: none; }
-.cta-btn:focus-visible { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--ink); }
+.cta-btn.secondary:hover, .cta-btn.secondary:focus-visible { background: var(--accent-soft); border-color: var(--accent); outline: none; }
+.cta-btn:focus-visible { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--accent); }
 .or { font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin: 0 0 .85rem; }
 
 /* ---- Rating badge on booking buttons ---- */
@@ -187,11 +190,11 @@ footer {
   display: inline-flex; align-items: center;
   font-size: .72rem; font-weight: 600; letter-spacing: .02em;
   line-height: 1;
-  color: #fff; background: var(--ink);
+  color: #fff; background: var(--accent);
   border-radius: 999px;
   padding: .25rem .5rem;
 }
-.btn:hover .badge, .btn:focus-visible .badge { color: var(--ink); background: #fff; }
+
 
 /* ---- Reviews carousel ---- */
 .reviews { margin: 2.5rem 0 0; }
@@ -228,6 +231,8 @@ footer {
 .reviews-dots button[aria-current="true"]::before { width: 18px; background: var(--ink); }
 .reviews-dots button:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; border-radius: 6px; }
 @media (prefers-reduced-motion: reduce) {
-  .review, .reviews-dots button::before { transition: none; transform: none; }
+  /* Still rotates, but as a plain fade with no movement */
+  .review { transform: none; transition: opacity .7s ease; }
+  .reviews-dots button::before { transition: none; }
 }
 .tagline strong { color: var(--ink); font-weight: 600; }

@@ -15,8 +15,7 @@ var REVIEWS = [
   var root = document.querySelector('[data-reviews]');
   if (!root || !REVIEWS.length) return;
 
-  var INTERVAL = 6000;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var INTERVAL = 8000; // 8 seconds per review
 
   // Build slides
   var track = document.createElement('div');
@@ -73,7 +72,7 @@ var REVIEWS = [
     dots.children[current].setAttribute('aria-current', 'true');
   }
   function start() {
-    if (reduceMotion || paused || timer) return;
+    if (paused || timer) return;
     timer = setInterval(function () { go(current + 1); }, INTERVAL);
   }
   function stop() { clearInterval(timer); timer = null; }
