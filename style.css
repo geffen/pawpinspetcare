@@ -215,9 +215,9 @@ footer {
 .review blockquote {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
-  color: var(--ink);
+  color: #4a4a4a;   /* softer than body text */
   text-wrap: balance;
 }
 .review figcaption { font-size: .8rem; color: var(--muted); margin-top: .5rem; }
