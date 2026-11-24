@@ -58,7 +58,7 @@ main { width: 100%; max-width: 440px; text-align: center; }
   display: grid;
   gap: .9rem;          /* space between intro paragraphs */
 }
-.blurb strong { font-weight: 600; }
+.blurb strong { font-weight: 600; color: var(--accent-deep); }
 
 .facts {
   list-style: none;
@@ -70,9 +70,9 @@ main { width: 100%; max-width: 440px; text-align: center; }
 }
 .facts li {
   font-size: .82rem;
-  color: var(--muted);
+  color: var(--accent-deep);
   background: var(--card);
-  border: 1px solid var(--line);
+  border: 1px solid #cddcea;   /* pale blue to go with the navy text */
   border-radius: 999px;
   padding: .3rem .8rem;
 }
@@ -137,7 +137,7 @@ footer {
   line-height: 1.25;
 }
 .lede { margin: .6rem 0 1.75rem; font-size: 1.02rem; color: var(--muted); text-wrap: pretty; }
-.lede strong { color: var(--ink); font-weight: 600; }
+.lede strong { color: var(--accent-deep); font-weight: 600; }
 
 .next { margin-top: 2.25rem; text-align: left; }
 .steps { list-style: none; counter-reset: step; display: grid; gap: .9rem; }
@@ -149,7 +149,7 @@ footer {
   display: grid; place-items: center;
   font-weight: 600; font-size: .9rem;
 }
-.steps strong { display: block; font-weight: 600; }
+.steps strong { display: block; font-weight: 600; color: var(--accent-deep); }
 .steps span { color: var(--muted); }
 
 .extras { margin-top: 2.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
@@ -239,7 +239,7 @@ footer {
   .review { transform: none; transition: opacity .7s ease; }
   .reviews-dots button::before { transition: none; }
 }
-.tagline strong { color: var(--ink); font-weight: 600; }
+.tagline strong { color: var(--accent-deep); font-weight: 600; }
 
 /* ---- Home page logo that shrinks on scroll (desktop only; driven by a small script in index.html) ---- */
 @media (min-width: 768px) and (hover: hover) and (pointer: fine) {
@@ -262,3 +262,6 @@ footer {
 /* ---- Soft cross-fade between pages (browsers that support it) ---- */
 @view-transition { navigation: auto; }
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .45s; }
+
+/* ---- Divider above the meet & greet section (home page) ---- */
+.divider { border: 0; border-top: 1px solid var(--stroke); margin: 0 0 2rem; }
