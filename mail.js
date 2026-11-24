@@ -1,7 +1,7 @@
 // Builds the pre-filled emails behind the meet & greet and availability buttons.
 // Each link has a plain mailto: fallback in its href; this fills in subject and body.
 (function () {
-  var TO = 'louise@vangeffen.org';
+  var TO = 'louise@pawpinspetcare.com';
   var TEMPLATES = {
     meet: {
       subject: 'Meet & greet request',

@@ -8,8 +8,9 @@
   <meta name="robots" content="noindex">
   <link rel="canonical" href="https://www.pawpinspetcare.com/">
   <meta name="theme-color" content="#ffffff">
-  <link rel="icon" href="../icon.png">
-  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -22,7 +23,7 @@
            alt="Pawpins Pet Care logo: a cat holding an umbrella, with a kitten">
       <h1 class="hello">Lovely to meet you!</h1>
       <p class="lede">
-        Thanks for chatting with me. I'm <strong>Louise</strong>, and I'd love
+        Thanks for chatting with me. I'm <strong>Louise</strong>, a fully insured pet sitter, and I'd love
         to look after your fur baby.
       </p>
     </header>
@@ -36,12 +37,12 @@
       </p>
       <div class="cta-buttons">
         <a class="cta-btn primary" data-mail="meet" data-intro="We met recently and I picked up your card!"
-           href="mailto:louise@vangeffen.org?subject=Meet%20%26%20greet%20request">
+           href="mailto:louise@pawpinspetcare.com?subject=Meet%20%26%20greet%20request">
           Book your meet &amp; greet now
           <small>Opens an email to me, ready to fill in</small>
         </a>
         <a class="cta-btn secondary" data-mail="availability" data-intro="We met recently and I picked up your card!"
-           href="mailto:louise@vangeffen.org?subject=Checking%20your%20availability">
+           href="mailto:louise@pawpinspetcare.com?subject=Checking%20your%20availability">
           Check my availability
           <small>Send your dates and the type of care you need</small>
         </a>
@@ -53,12 +54,12 @@
       <div class="links">
         <a class="btn" href="https://www.rover.com/members/louise-v-let-me-take-care-of-your-fur-baby/" rel="noopener">
           <span class="icon" aria-hidden="true">🐾</span>
-          <span><span class="label">Rover</span><span class="sub">Dogs or cats · book, message &amp; pay in the app</span></span>
+          <span><span class="label">Rover <span class="badge" title="5-star rating">★ 5.0</span></span><span class="sub">Dogs &amp; cats · book in the app</span></span>
           <span class="arrow" aria-hidden="true">›</span>
         </a>
         <a class="btn" href="https://meowtel.com/cat-sitters/WA/kenmore/gentle-loving-and-reliable-cat-care" rel="noopener">
           <span class="icon" aria-hidden="true">🐈</span>
-          <span><span class="label">Meowtel</span><span class="sub">Cats · the cat-sitting specialist app</span></span>
+          <span><span class="label">Meowtel <span class="badge" title="5-star rating">★ 5.0</span></span><span class="sub">Cats only · book in the app</span></span>
           <span class="arrow" aria-hidden="true">›</span>
         </a>
       </div>
@@ -73,6 +74,10 @@
       </ol>
     </section>
 
+    <section class="reviews" data-reviews aria-label="Client reviews">
+      <figure class="review is-active"><blockquote>“Louise is a great sitter! I trust her completely with my cats!”</blockquote><figcaption>Jessica, Meowtel review</figcaption></figure>
+    </section>
+
     <div class="extras">
       <a class="chip" href="../louise-van-geffen.vcf" download>📇 Save my contact</a>
       <button class="chip" type="button" id="share">💌 Share with a friend</button>
@@ -84,6 +89,7 @@
   </main>
 
   <script src="../mail.js"></script>
+  <script src="../reviews.js"></script>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
