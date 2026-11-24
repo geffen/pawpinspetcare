@@ -53,6 +53,8 @@ main { width: 100%; max-width: 440px; text-align: center; }
   margin: 1.75rem 0;
   font-size: 1.02rem;
   text-wrap: pretty;
+  display: grid;
+  gap: .9rem;          /* space between intro paragraphs */
 }
 .blurb strong { font-weight: 600; }
 
