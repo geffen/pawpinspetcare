@@ -5,8 +5,8 @@
   --muted: #5f5f5f;
   --line: #dcdcdc;
   --stroke: #dde1e6;          /* soft border for buttons and step circles */
-  --accent: #0077d1;          /* Pawpins blue (from #0084e4, darkened a touch so white text passes contrast) */
-  --accent-hover: #0066b4;
+  --accent: #006bbd;          /* Pawpins blue (a deeper take on #0084e4) */
+  --accent-hover: #005aa0;
   --accent-soft: #f2f8fd;     /* light blue hover tint */
   --radius: 14px;
   --serif: "Merriweather", Georgia, serif;
@@ -95,7 +95,7 @@ h2 {
   background: var(--card);
   border: 1.5px solid var(--stroke);
   border-radius: var(--radius);
-  padding: .95rem 1.1rem;
+  padding: .7rem 1rem;
   transition: background .15s ease, color .15s ease;
 }
 .btn:hover, .btn:focus-visible {
@@ -104,10 +104,10 @@ h2 {
   outline: none;
 }
 .btn:focus-visible { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--accent); }
-.btn .icon { font-size: 1.4rem; line-height: 1; flex: none; }
-.btn .label { font-weight: 600; font-size: 1.05rem; display: block; }
-.btn .sub { color: var(--muted); font-size: .82rem; display: block; }
-.btn .arrow { margin-left: auto; color: var(--muted); font-size: 1.3rem; }
+.btn .icon { font-size: 1.2rem; line-height: 1; flex: none; }
+.btn .label { font-weight: 600; font-size: .95rem; display: block; }
+.btn .sub { color: var(--muted); font-size: .76rem; display: block; }
+.btn .arrow { margin-left: auto; color: var(--muted); font-size: 1.1rem; }
 
 .quote {
   margin: 2.25rem 0 0;
@@ -170,13 +170,13 @@ footer {
   display: block;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.08rem;
+  font-size: .95rem;
   border: 1.5px solid var(--stroke);
   border-radius: var(--radius);
-  padding: 1rem 1.1rem;
+  padding: .75rem 1rem;
   transition: background .15s ease, color .15s ease;
 }
-.cta-btn small { display: block; font-weight: 400; font-size: .8rem; margin-top: .15rem; opacity: .8; }
+.cta-btn small { display: block; font-weight: 400; font-size: .75rem; margin-top: .15rem; opacity: .8; }
 .cta-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 .cta-btn.primary:hover, .cta-btn.primary:focus-visible { background: var(--accent-hover); border-color: var(--accent-hover); outline: none; }
 .cta-btn.secondary { background: #fff; color: var(--ink); }
@@ -190,11 +190,11 @@ footer {
 .btn .sub { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .badge {
   display: inline-flex; align-items: center;
-  font-size: .72rem; font-weight: 600; letter-spacing: .02em;
+  font-size: .66rem; font-weight: 600; letter-spacing: .02em;
   line-height: 1;
   color: #fff; background: var(--accent);
   border-radius: 999px;
-  padding: .25rem .5rem;
+  padding: .2rem .45rem;
 }
 
 
@@ -238,3 +238,8 @@ footer {
   .reviews-dots button::before { transition: none; }
 }
 .tagline strong { color: var(--ink); font-weight: 600; }
+
+/* ---- Home page logo that shrinks on scroll (desktop only; driven by a small script in index.html) ---- */
+@media (min-width: 768px) and (hover: hover) and (pointer: fine) {
+  .logo-grow { width: var(--logo-w, 160px); max-width: none; will-change: width; }
+}
