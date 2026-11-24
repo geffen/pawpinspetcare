@@ -43,4 +43,32 @@
       '?subject=' + encodeURIComponent(t.subject) +
       '&body=' + encodeURIComponent(lines.join('\n'));
   }
+
+  // After someone opens an email link on the home page, move the site to the
+  // card welcome page (/hi/). The short delay lets the email app open first.
+  var onCardPage = /\/hi\/?(index\.html)?$/.test(location.pathname);
+  if (!onCardPage) {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+      if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      setTimeout(function () {
+        location.href = new URL('hi/?from=email', location.href).href;
+      }, 700);
+    });
+  }
+
+  // On the card page, arriving from an email link: show the address in case
+  // the visitor's email app didn't open, then tidy the URL.
+  if (onCardPage && /[?&]from=email\b/.test(location.search)) {
+    var main = document.querySelector('main');
+    if (main) {
+      var note = document.createElement('p');
+      note.className = 'notice';
+      note.setAttribute('role', 'status');
+      note.innerHTML = 'Your email to Louise should have opened. If it didn’t, write to ' +
+        '<a href="mailto:' + TO + '">' + TO + '</a>.';
+      main.insertBefore(note, main.firstChild);
+    }
+    if (history.replaceState) history.replaceState(null, '', location.pathname);
+  }
 })();

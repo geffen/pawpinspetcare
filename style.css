@@ -243,3 +243,20 @@ footer {
 @media (min-width: 768px) and (hover: hover) and (pointer: fine) {
   .logo-grow { width: var(--logo-w, 160px); max-width: none; will-change: width; }
 }
+
+/* ---- Note shown on /hi/ after arriving from an email link ---- */
+.notice {
+  font-size: .85rem;
+  color: var(--ink);
+  background: var(--accent-soft);
+  border: 1px solid var(--stroke);
+  border-radius: 10px;
+  padding: .65rem .9rem;
+  margin: 0 0 1.5rem;
+  text-wrap: pretty;
+}
+.notice a { color: var(--accent); font-weight: 600; }
+
+/* ---- Soft cross-fade between pages (browsers that support it) ---- */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .45s; }
