@@ -213,9 +213,9 @@ footer {
 }
 .review.is-active { opacity: 1; transform: none; pointer-events: auto; }
 .review blockquote {
-  font-family: var(--serif);
+  font-family: "Lora", Georgia, serif;   /* softer italic than Merriweather */
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1.12rem;
   line-height: 1.6;
   color: #4a4a4a;   /* softer than body text */
   text-wrap: balance;
