@@ -45,16 +45,31 @@
   }
 
   // After someone opens an email link on the home page, move the site to the
-  // card welcome page (/hi/). The short delay lets the email app open first.
+  // card welcome page (/hi/) once they come back from their email app.
+  // Leaving the page any sooner would cancel the browser's "Open Mail?" prompt
+  // and stop the email from opening.
   var onCardPage = /\/hi\/?(index\.html)?$/.test(location.pathname);
   if (!onCardPage) {
+    var pendingUntil = 0, leftPage = false;
+    var goToCardPage = function () {
+      if (!leftPage || Date.now() > pendingUntil) return;
+      pendingUntil = 0;
+      location.href = new URL('hi/?from=email', location.href).href;
+    };
     document.addEventListener('click', function (e) {
       var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
       if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      setTimeout(function () {
-        location.href = new URL('hi/?from=email', location.href).href;
-      }, 700);
+      pendingUntil = Date.now() + 10 * 60 * 1000; // only within 10 minutes of the click
+      leftPage = false;
     });
+    // The email app (or a webmail tab) taking over marks that the visitor left...
+    window.addEventListener('blur', function () { if (pendingUntil) leftPage = true; });
+    document.addEventListener('visibilitychange', function () {
+      if (!pendingUntil) return;
+      if (document.hidden) leftPage = true; else goToCardPage();
+    });
+    // ...and coming back to this tab moves them to /hi/.
+    window.addEventListener('focus', goToCardPage);
   }
 
   // On the card page, arriving from an email link: show the address in case

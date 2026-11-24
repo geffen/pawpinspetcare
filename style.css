@@ -8,6 +8,7 @@
   --accent: #006bbd;          /* Pawpins blue (a deeper take on #0084e4) */
   --accent-hover: #005aa0;
   --accent-soft: #f2f8fd;     /* light blue hover tint */
+  --accent-deep: #0b3f6e;     /* darker blue for Louise's name and section headers */
   --radius: 14px;
   --serif: "Merriweather", Georgia, serif;
   --sans: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -42,6 +43,7 @@ main { width: 100%; max-width: 440px; text-align: center; }
   font-weight: 700;
   font-size: 1.65rem;
   line-height: 1.2;
+  color: var(--accent-deep);
 }
 .tagline {
   color: var(--muted);
@@ -79,7 +81,7 @@ h2 {
   font-size: .78rem;
   text-transform: uppercase;
   letter-spacing: .12em;
-  color: var(--muted);
+  color: var(--accent-deep);
   font-weight: 600;
   margin-bottom: .85rem;
 }
@@ -182,7 +184,7 @@ footer {
 .cta-btn.secondary { background: #fff; color: var(--ink); }
 .cta-btn.secondary:hover, .cta-btn.secondary:focus-visible { background: var(--accent-soft); border-color: var(--accent); outline: none; }
 .cta-btn:focus-visible { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--accent); }
-.or { font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin: 0 0 .85rem; }
+.or { font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--accent-deep); margin: 0 0 .85rem; }
 
 /* ---- Rating badge on booking buttons ---- */
 .btn > span:not(.icon):not(.arrow) { min-width: 0; }
