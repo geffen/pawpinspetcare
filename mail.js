@@ -44,6 +44,17 @@
       '&body=' + encodeURIComponent(lines.join('\n'));
   }
 
+  // Open every email link in a new tab, so webmail (e.g. Gmail) doesn't replace
+  // this page. Desktop mail apps open as usual. Also applied at click time for
+  // links added or rewritten later (e.g. by Cloudflare's email protection).
+  function newTab(a) { a.target = '_blank'; a.rel = 'noopener'; }
+  var mailLinks = document.querySelectorAll('a[href^="mailto:"]');
+  for (var m = 0; m < mailLinks.length; m++) newTab(mailLinks[m]);
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+    if (a) newTab(a);
+  }, true);
+
   // After someone opens an email link on the home page, move the site to the
   // card welcome page (/hi/) once they come back from their email app.
   // Leaving the page any sooner would cancel the browser's "Open Mail?" prompt
@@ -81,7 +92,7 @@
       note.className = 'notice';
       note.setAttribute('role', 'status');
       note.innerHTML = 'Your email to Louise should have opened. If it didn’t, write to ' +
-        '<a href="mailto:' + TO + '">' + TO + '</a>.';
+        '<a href="mailto:' + TO + '" target="_blank" rel="noopener">' + TO + '</a>.';
       main.insertBefore(note, main.firstChild);
     }
     if (history.replaceState) history.replaceState(null, '', location.pathname);
