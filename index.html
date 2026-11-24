@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pawpins Pet Care · Cat &amp; Pet Sitting in Kenmore, WA</title>
+  <meta name="description" content="Gentle, loving, reliable pet care from Louise in Kenmore, Bothell, Kirkland, Redmond and Woodinville. Book through Rover, Meowtel, or contact Louise directly.">
+  <link rel="canonical" href="https://www.pawpinspetcare.com/">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pawpins Pet Care">
+  <meta property="og:description" content="Gentle, loving, reliable pet care in Kenmore, WA.">
+  <meta property="og:url" content="https://www.pawpinspetcare.com/">
+  <meta property="og:image" content="https://www.pawpinspetcare.com/icon.png">
+
+  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Pawpins Pet Care",
+    "founder": { "@type": "Person", "name": "Louise Van Geffen" },
+    "url": "https://www.pawpinspetcare.com/",
+    "logo": "https://www.pawpinspetcare.com/icon.png",
+    "email": "louise@vangeffen.org",
+    "description": "In-home cat and pet sitting with over 15 years of professional experience.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Kenmore", "addressRegion": "WA", "postalCode": "98028", "addressCountry": "US" },
+    "areaServed": ["Kenmore", "Bothell", "Kirkland", "Redmond", "Woodinville"],
+    "sameAs": [
+      "https://www.rover.com/members/louise-v-let-me-take-care-of-your-fur-baby/",
+      "https://meowtel.com/cat-sitters/WA/kenmore/gentle-loving-and-reliable-cat-care"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card: #ffffff;
+      --ink: #111111;
+      --muted: #5f5f5f;
+      --line: #dcdcdc;
+      --radius: 14px;
+      --serif: "Merriweather", Georgia, serif;
+      --sans: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 2.5rem 1.25rem 2rem;
+    }
+    main { width: 100%; max-width: 440px; text-align: center; }
+
+    .logo {
+      display: block;
+      width: 160px;
+      max-width: 45%;
+      height: auto;
+      margin: 0 auto 1.5rem;
+    }
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); white-space: nowrap;
+    }
+    .name {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.65rem;
+      line-height: 1.2;
+    }
+    .tagline {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: .4rem;
+    }
+
+    .blurb {
+      margin: 1.75rem 0;
+      font-size: 1.02rem;
+      text-wrap: pretty;
+    }
+    .blurb strong { font-weight: 600; }
+
+    .facts {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .5rem;
+      margin-bottom: 2rem;
+    }
+    .facts li {
+      font-size: .82rem;
+      color: var(--muted);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: .3rem .8rem;
+    }
+
+    h2 {
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: .85rem;
+    }
+
+    .links { display: grid; gap: .75rem; }
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      text-align: left;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--card);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius);
+      padding: .95rem 1.1rem;
+      transition: background .15s ease, color .15s ease;
+    }
+    .btn:hover, .btn:focus-visible {
+      background: var(--ink);
+      color: #fff;
+      outline: none;
+    }
+    .btn:focus-visible { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--ink); }
+    .btn .icon { font-size: 1.4rem; line-height: 1; flex: none; }
+    .btn .label { font-weight: 600; font-size: 1.05rem; display: block; }
+    .btn .sub { color: var(--muted); font-size: .82rem; display: block; }
+    .btn:hover .sub, .btn:focus-visible .sub, .btn:hover .arrow, .btn:focus-visible .arrow { color: #ccc; }
+    .btn .arrow { margin-left: auto; color: var(--muted); font-size: 1.3rem; }
+
+    .quote {
+      margin: 2.25rem 0 0;
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--muted);
+      font-size: .98rem;
+    }
+    .quote cite { display: block; font-style: normal; font-family: inherit; font-size: .8rem; margin-top: .3rem; }
+
+    footer {
+      margin-top: 2.5rem;
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
+    @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1 class="visually-hidden">Pawpins Pet Care</h1>
+      <img class="logo" src="logo.png" width="881" height="1422"
+           alt="Pawpins Pet Care logo: a cat holding an umbrella, with a kitten">
+      <p class="name">Louise Van Geffen</p>
+      <p class="tagline">Gentle, loving, reliable care · Kenmore, WA</p>
+    </header>
+
+    <p class="blurb">
+      Hi, I'm <strong>Louise</strong>. I've been a professional pet carer for
+      over 15 years and I'm happiest with shy or nervous kitties. I go at
+      your pet's pace, whether that's play, cuddles, or quiet company, and
+      I'm comfortable with medications from pills and drops to injections and
+      sub-Q fluids. You'll get a photo update every visit.
+    </p>
+
+    <ul class="facts" aria-label="Highlights">
+      <li>15+ years experience</li>
+      <li>Background-checked</li>
+      <li>Medications &amp; injections</li>
+      <li>Kenmore · Bothell · Kirkland · Redmond · Woodinville</li>
+    </ul>
+
+    <section aria-labelledby="book">
+      <h2 id="book">Book a visit</h2>
+      <div class="links">
+        <a class="btn rover" href="https://www.rover.com/members/louise-v-let-me-take-care-of-your-fur-baby/" rel="noopener">
+          <span class="icon" aria-hidden="true">🐾</span>
+          <span><span class="label">Rover</span><span class="sub">Dogs &amp; cats · 220+ five-star reviews</span></span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+        <a class="btn meowtel" href="https://meowtel.com/cat-sitters/WA/kenmore/gentle-loving-and-reliable-cat-care" rel="noopener">
+          <span class="icon" aria-hidden="true">🐈</span>
+          <span><span class="label">Meowtel</span><span class="sub">Cat sitting specialist</span></span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+        <a class="btn direct" href="mailto:louise@vangeffen.org?subject=Pet%20care%20inquiry">
+          <span class="icon" aria-hidden="true">✉️</span>
+          <span><span class="label">Contact Louise directly</span><span class="sub">louise@vangeffen.org</span></span>
+          <span class="arrow" aria-hidden="true">›</span>
+        </a>
+        <!-- To add a text/call button, copy the block above and use href="sms:+1XXXXXXXXXX" or "tel:+1XXXXXXXXXX" -->
+      </div>
+    </section>
+
+    <blockquote class="quote">
+      “Louise is a great sitter! I trust her completely with my cats!”
+      <cite>Jessica, Meowtel review</cite>
+    </blockquote>
+
+    <footer>© <span id="y">2026</span> Pawpins Pet Care</footer>
+  </main>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
